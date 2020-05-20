@@ -12,6 +12,8 @@ namespace TicTacToe
 {
     public partial class Form1 : Form
     {
+        bool XPlayerTurn = true;
+
         public Form1()
         {
             InitializeComponent();
@@ -26,7 +28,15 @@ namespace TicTacToe
         private void Player_Click(object sender, EventArgs e)
         {
             Label label = (Label)sender;
-            label.Text = "X";
+            if (XPlayerTurn)
+            {
+                label.Text = "X";
+            }
+            else
+            {
+                label.Text = "0";
+            }
+            XPlayerTurn = !XPlayerTurn;
         }
     }
 }
